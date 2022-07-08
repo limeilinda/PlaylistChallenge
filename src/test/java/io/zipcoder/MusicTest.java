@@ -28,4 +28,5 @@ public class MusicTest {
         Integer actual = music.selection(startingIndex, selection);
         Assert.assertEquals(expected, actual);
     }
+
 }
