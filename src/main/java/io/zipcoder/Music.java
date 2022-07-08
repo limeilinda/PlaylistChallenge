@@ -14,13 +14,14 @@ public class Music {
 
         String up = playList[startIndex];
         String down = playList[startIndex];
+        int upIdx = startIndex;
+        int downIdx = startIndex;
 
         int click = 0;
 
         while (!up.equals(selection) && !down.equals(selection)) {
 
         }
-
      return startIndex;
  }
 
