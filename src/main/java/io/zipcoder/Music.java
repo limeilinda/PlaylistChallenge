@@ -10,19 +10,28 @@ public class Music {
         this.playList = playList;
     }
 
- public Integer selection(Integer startIndex, String selection) {
+    public Integer selection(Integer startIndex, String selection) {
 
-        String up = playList[startIndex];
-        String down = playList[startIndex];
-        int upIdx = startIndex;
-        int downIdx = startIndex;
+        String selectUp = playList[startIndex];
+        String selectDown = playList[startIndex];
+        int upIndex = startIndex;
+        int downIndex = startIndex;
+        int clicks = 0;
+        int lastIndex = this.playList.length - 1;
 
-        int click = 0;
-
-        while (!up.equals(selection) && !down.equals(selection)) {
-
+        while (!selectUp.equals(selection) && !selectDown.equals(selection)) {
+            upIndex = (upIndex == 0) ? lastIndex : upIndex - 1;
+            downIndex = (downIndex == lastIndex) ? 0 : downIndex + 1;
+            clicks++;
+            selectUp = playList[upIndex];
+            selectDown = playList[downIndex];
         }
-     return startIndex;
- }
 
+        return clicks;
+
+    }
 }
+
+
+
+
